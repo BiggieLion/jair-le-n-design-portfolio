@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Code2, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProjectsCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -22,10 +25,10 @@ const ProjectsCard = () => {
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <Code2 className="w-5 h-5 text-primary" />
-            <h3 className="text-foreground font-bold text-lg">Projects & Work</h3>
+            <h3 className="text-foreground font-bold text-lg">{t.projects.title}</h3>
           </div>
           <p className="text-muted-foreground text-sm">
-            Explore my portfolio of applications, experiments, and open-source contributions.
+            {t.projects.description}
           </p>
         </div>
         

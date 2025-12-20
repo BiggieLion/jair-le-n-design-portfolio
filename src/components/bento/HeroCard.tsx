@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import profileAvatar from "@/assets/profile-avatar.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,15 +25,11 @@ const HeroCard = () => {
           </motion.span>
           
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-            Hi, I'm <span className="text-yellow-300">Jair León</span>
+            {t.hero.greeting} <span className="text-yellow-300">{t.hero.name}</span>
           </h1>
           
           <p className="text-white/90 text-sm md:text-base leading-relaxed">
-            I am a <strong>full stack developer</strong> with experience in{" "}
-            <strong>TypeScript</strong>, <strong>NestJS</strong>, <strong>Angular</strong>, and{" "}
-            <strong>Python</strong>. I love building scalable applications and 
-            exploring new technologies. I have a passion for clean code and 
-            always put my all into my work.
+            {t.hero.description}
           </p>
         </div>
         

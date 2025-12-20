@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Cloud, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WeatherCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -12,13 +15,13 @@ const WeatherCard = () => {
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-1.5 text-muted-foreground">
           <MapPin className="w-3.5 h-3.5" />
-          <span className="text-xs">Your City</span>
+          <span className="text-xs">{t.weather.yourCity}</span>
         </div>
         <motion.div
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 3, repeat: Infinity }}
         >
-          <Cloud className="w-8 h-8 text-blue-400" />
+          <Cloud className="w-8 h-8 text-bento-blue" />
         </motion.div>
       </div>
       
@@ -28,7 +31,7 @@ const WeatherCard = () => {
           <span className="text-muted-foreground text-xs mb-1">C</span>
         </div>
         <p className="text-muted-foreground text-xs mt-0.5">
-          Partly Cloudy
+          {t.weather.partlyCloudy}
         </p>
       </div>
     </motion.div>
