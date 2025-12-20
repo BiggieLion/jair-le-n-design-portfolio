@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExperienceCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -9,7 +12,7 @@ const ExperienceCard = () => {
       className="bento-card bento-coral h-full min-h-[140px] flex flex-col items-center justify-center text-center"
     >
       <span className="text-white/70 text-xs font-medium uppercase tracking-wider mb-1">
-        Experience
+        {t.experience.label}
       </span>
       <motion.span 
         className="text-5xl md:text-6xl font-bold text-white"
@@ -20,7 +23,7 @@ const ExperienceCard = () => {
         +4
       </motion.span>
       <span className="text-white/90 text-xs font-semibold uppercase tracking-wider mt-1">
-        Years
+        {t.experience.years}
       </span>
     </motion.div>
   );

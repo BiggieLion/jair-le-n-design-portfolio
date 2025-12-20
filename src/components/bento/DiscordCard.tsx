@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const DiscordCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.a
       href="https://discord.com"
@@ -27,7 +30,7 @@ const DiscordCard = () => {
       
       <div className="flex items-center gap-1.5 mt-1">
         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-        <span className="text-white/80 text-xs">Online</span>
+        <span className="text-white/80 text-xs">{t.discord.online}</span>
       </div>
     </motion.a>
   );

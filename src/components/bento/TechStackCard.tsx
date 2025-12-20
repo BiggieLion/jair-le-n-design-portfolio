@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const technologies = [
   { name: "TypeScript", color: "bg-blue-500" },
@@ -10,6 +11,8 @@ const technologies = [
 ];
 
 const TechStackCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -17,7 +20,7 @@ const TechStackCard = () => {
       transition={{ duration: 0.5, delay: 0.25 }}
       className="bento-card bg-card h-full min-h-[120px]"
     >
-      <h3 className="text-foreground font-semibold text-base mb-3">Tech Stack</h3>
+      <h3 className="text-foreground font-semibold text-base mb-3">{t.techStack.title}</h3>
       
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech, index) => (

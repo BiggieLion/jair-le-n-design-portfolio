@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TimeCard = () => {
   const [time, setTime] = useState(new Date());
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -19,13 +21,13 @@ const TimeCard = () => {
     >
       <Clock className="w-5 h-5 text-muted-foreground mb-2" />
       <span className="text-2xl md:text-3xl font-bold text-foreground tabular-nums">
-        {time.toLocaleTimeString("en-US", {
+        {time.toLocaleTimeString(language === "es" ? "es-ES" : "en-US", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: false,
         })}
       </span>
-      <span className="text-muted-foreground text-xs mt-1">Local Time</span>
+      <span className="text-muted-foreground text-xs mt-1">{t.time.localTime}</span>
     </motion.div>
   );
 };

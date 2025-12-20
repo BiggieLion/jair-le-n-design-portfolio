@@ -10,15 +10,24 @@ import GitHubCard from "@/components/bento/GitHubCard";
 import EmailCard from "@/components/bento/EmailCard";
 import ProjectsCard from "@/components/bento/ProjectsCard";
 import TimeCard from "@/components/bento/TimeCard";
+import SettingsCard from "@/components/bento/SettingsCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { language } = useLanguage();
+
   return (
     <>
       <Helmet>
+        <html lang={language} />
         <title>Jair León - Full Stack Developer</title>
         <meta
           name="description"
-          content="Jair León - Full Stack Developer with 4+ years of experience in TypeScript, NestJS, Angular, Python, and Flask. Building scalable web applications."
+          content={
+            language === "es"
+              ? "Jair León - Desarrollador Full Stack con más de 4 años de experiencia en TypeScript, NestJS, Angular, Python y Flask. Construyendo aplicaciones web escalables."
+              : "Jair León - Full Stack Developer with 4+ years of experience in TypeScript, NestJS, Angular, Python, and Flask. Building scalable web applications."
+          }
         />
       </Helmet>
 
@@ -54,6 +63,9 @@ const Index = () => {
             
             {/* Row 5 */}
             <EmailCard />
+            <div className="col-span-3">
+              <SettingsCard />
+            </div>
           </div>
 
           {/* Mobile Grid Layout */}
@@ -78,6 +90,9 @@ const Index = () => {
             </div>
             <div className="col-span-2">
               <EmailCard />
+            </div>
+            <div className="col-span-2">
+              <SettingsCard />
             </div>
           </div>
         </div>

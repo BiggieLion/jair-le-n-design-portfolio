@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MusicCard = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -16,7 +19,7 @@ const MusicCard = () => {
           <Music className="w-4 h-4 text-white/80" />
           <span className="text-white/80 text-xs font-medium">Apple Music</span>
         </div>
-        <span className="text-white/60 text-xs">Recently Listened</span>
+        <span className="text-white/60 text-xs">{t.music.recentlyListened}</span>
       </div>
       
       <div className="relative z-10 flex items-center gap-3 flex-1">
