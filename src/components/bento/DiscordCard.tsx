@@ -5,14 +5,11 @@ const DiscordCard = () => {
   const { t } = useLanguage();
 
   return (
-    <motion.a
-      href="https://discord.com"
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="bento-card bento-discord h-full min-h-[140px] flex flex-col items-center justify-center text-center cursor-pointer group"
+      className="bento-card bento-discord h-full min-h-[140px] flex flex-col items-center justify-center text-center group"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
       
@@ -32,7 +29,7 @@ const DiscordCard = () => {
         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
         <span className="text-white/80 text-xs">{t.discord.online}</span>
       </div>
-    </motion.a>
+    </motion.div>
   );
 };
 
