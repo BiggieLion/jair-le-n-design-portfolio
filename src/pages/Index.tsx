@@ -10,7 +10,8 @@ import GitHubCard from "@/components/bento/GitHubCard";
 import EmailCard from "@/components/bento/EmailCard";
 import ProjectsCard from "@/components/bento/ProjectsCard";
 import TimeCard from "@/components/bento/TimeCard";
-import SettingsCard from "@/components/bento/SettingsCard";
+import ThemeCard from "@/components/bento/ThemeCard";
+import LanguageCard from "@/components/bento/LanguageCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -63,9 +64,9 @@ const Index = () => {
             
             {/* Row 5 */}
             <EmailCard />
-            <div className="col-span-3">
-              <SettingsCard />
-            </div>
+            <ThemeCard />
+            <LanguageCard />
+            <div className="col-span-1" /> {/* Empty spacer for alignment */}
           </div>
 
           {/* Mobile Grid Layout */}
@@ -91,9 +92,8 @@ const Index = () => {
             <div className="col-span-2">
               <EmailCard />
             </div>
-            <div className="col-span-2">
-              <SettingsCard />
-            </div>
+            <ThemeCard />
+            <LanguageCard />
           </div>
         </div>
       </main>

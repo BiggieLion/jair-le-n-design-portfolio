@@ -20,7 +20,12 @@ interface Translations {
   };
   weather: {
     yourCity: string;
-    partlyCloudy: string;
+    sunny: string;
+    cloudy: string;
+    rainy: string;
+    snowy: string;
+    stormy: string;
+    windy: string;
   };
   techStack: {
     title: string;
@@ -62,7 +67,12 @@ const translations: Record<Language, Translations> = {
     },
     weather: {
       yourCity: "Your City",
-      partlyCloudy: "Partly Cloudy",
+      sunny: "Sunny",
+      cloudy: "Cloudy",
+      rainy: "Rainy",
+      snowy: "Snowy",
+      stormy: "Stormy",
+      windy: "Windy",
     },
     techStack: {
       title: "Tech Stack",
@@ -103,7 +113,12 @@ const translations: Record<Language, Translations> = {
     },
     weather: {
       yourCity: "Tu ciudad",
-      partlyCloudy: "Parcialmente nublado",
+      sunny: "Soleado",
+      cloudy: "Nublado",
+      rainy: "Lluvioso",
+      snowy: "Nevando",
+      stormy: "Tormenta",
+      windy: "Ventoso",
     },
     techStack: {
       title: "Tecnologías",
